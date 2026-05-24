@@ -6,7 +6,7 @@
 
 ## FlClash
 
-[![Downloads](https://img.shields.io/github/downloads/chen08209/FlClash/total?style=flat-square&logo=github)](https://github.com/chen08209/FlClash/releases/)[![Last Version](https://img.shields.io/github/release/chen08209/FlClash/all.svg?style=flat-square)](https://github.com/chen08209/FlClash/releases/)[![License](https://img.shields.io/github/license/chen08209/FlClash?style=flat-square)](LICENSE)
+[![Downloads](https://img.shields.io/github/downloads/KUAILESHANGWEI/FlClash/total?style=flat-square&logo=github)](https://github.com/KUAILESHANGWEI/FlClash/releases/)[![Last Version](https://img.shields.io/github/release/KUAILESHANGWEI/FlClash/all.svg?style=flat-square)](https://github.com/KUAILESHANGWEI/FlClash/releases/)[![License](https://img.shields.io/github/license/KUAILESHANGWEI/FlClash?style=flat-square)](LICENSE)
 
 [![Channel](https://img.shields.io/badge/Telegram-Channel-blue?style=flat-square&logo=telegram)](https://t.me/FlClash)
 
@@ -59,18 +59,13 @@ Support the following actions
 
 ## Download
 
-<a href="https://chen08209.github.io/FlClash-fdroid-repo/repo?fingerprint=789D6D32668712EF7672F9E58DEEB15FBD6DCEEC5AE7A4371EA72F2AAE8A12FD"><img alt="Get it on F-Droid" src="snapshots/get-it-on-fdroid.svg" width="200px"/></a> <a href="https://github.com/chen08209/FlClash/releases"><img alt="Get it on GitHub" src="snapshots/get-it-on-github.svg" width="200px"/></a>
+<a href="https://github.com/KUAILESHANGWEI/FlClash/releases"><img alt="Get it on GitHub" src="snapshots/get-it-on-github.svg" width="200px"/></a>
 
 ## Build
 
-1. Update submodules
-   ```bash
-   git submodule update --init --recursive
-   ```
+1. Install `Flutter` and `Golang` environment
 
-2. Install `Flutter` and `Golang` environment
-
-3. Build Application
+2. Build Application
 
     - android
 
@@ -121,7 +116,7 @@ Support the following actions
 The easiest way to support developers is to click on the star (⭐) at the top of the page.
 
 <p style="text-align: center;">
-    <a href="https://api.star-history.com/svg?repos=chen08209/FlClash&Date">
-        <img alt="start" width=50% src="https://api.star-history.com/svg?repos=chen08209/FlClash&Date"/>
+    <a href="https://api.star-history.com/svg?repos=KUAILESHANGWEI/FlClash&Date">
+        <img alt="start" width=50% src="https://api.star-history.com/svg?repos=KUAILESHANGWEI/FlClash&Date"/>
     </a>
 </p>

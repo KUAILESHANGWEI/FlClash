@@ -309,7 +309,7 @@
 			);
 			mainGroup = 33CC10E42044A3C60003C045;
 			packageReferences = (
-				F5131FDB2EF0F1A500A1748D /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+				F5131FDB2EF0F1A500A1748D /* XCLocalSwiftPackageReference "LaunchAtLogin" */,
 			);
 			productRefGroup = 33CC10EE2044A3C60003C045 /* Products */;
 			projectDirPath = "";
@@ -824,21 +824,17 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		F5131FDB2EF0F1A500A1748D /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		F5131FDB2EF0F1A500A1748D /* XCLocalSwiftPackageReference "LaunchAtLogin" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../third_party/LaunchAtLogin;
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		F5131FDC2EF0F1A500A1748D /* LaunchAtLogin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F5131FDB2EF0F1A500A1748D /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			package = F5131FDB2EF0F1A500A1748D /* XCLocalSwiftPackageReference "LaunchAtLogin" */;
 			productName = LaunchAtLogin;
 		};
 /* End XCSwiftPackageProductDependency section */

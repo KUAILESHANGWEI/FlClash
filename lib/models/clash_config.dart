@@ -276,19 +276,19 @@ abstract class Dns with _$Dns {
 abstract class GeoXUrl with _$GeoXUrl {
   const factory GeoXUrl({
     @Default(
-      'https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb',
+      'https://github.com/KUAILESHANGWEI/FlClash/releases/download/third-party-meta-rules-dat-latest/geoip.metadb',
     )
     String mmdb,
     @Default(
-      'https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb',
+      'https://github.com/KUAILESHANGWEI/FlClash/releases/download/third-party-meta-rules-dat-latest/GeoLite2-ASN.mmdb',
     )
     String asn,
     @Default(
-      'https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat',
+      'https://github.com/KUAILESHANGWEI/FlClash/releases/download/third-party-meta-rules-dat-latest/geoip.dat',
     )
     String geoip,
     @Default(
-      'https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat',
+      'https://github.com/KUAILESHANGWEI/FlClash/releases/download/third-party-meta-rules-dat-latest/geosite.dat',
     )
     String geosite,
   }) = _GeoXUrl;

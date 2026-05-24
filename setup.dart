@@ -397,7 +397,7 @@ class BuildCommand extends Command {
       final downloadName = arch == Arch.amd64 ? 'x86_64' : 'aarch64';
       await Build.exec(
         Build.getExecutable(
-          'wget -O appimagetool https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-$downloadName.AppImage',
+          'wget -O appimagetool https://github.com/KUAILESHANGWEI/FlClash/releases/download/third-party-appimagekit-continuous/appimagetool-$downloadName.AppImage',
         ),
       );
       await Build.exec(Build.getExecutable('chmod +x appimagetool'));

@@ -62,7 +62,7 @@ class AboutView extends StatelessWidget {
           title: Text(appLocalizations.core),
           onTap: () {
             globalState.openUrl(
-              'https://github.com/chen08209/Clash.Meta/tree/FlClash',
+              'https://github.com/KUAILESHANGWEI/FlClash/tree/main/core/Clash.Meta',
             );
           },
           trailing: const Icon(Icons.launch),
