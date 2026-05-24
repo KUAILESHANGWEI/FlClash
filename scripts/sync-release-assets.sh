@@ -74,7 +74,9 @@ sync_github_release() {
   else
     local pattern
     for pattern in "${patterns[@]}"; do
-      gh release download "$source_tag" -R "$source_repo" --pattern "$pattern" --dir "$assets_dir" --clobber
+      if ! gh release download "$source_tag" -R "$source_repo" --pattern "$pattern" --dir "$assets_dir" --clobber; then
+        echo "No assets matched optional pattern '${pattern}' for ${source_repo}@${source_tag}"
+      fi
     done
   fi
 
@@ -121,10 +123,16 @@ main() {
   require_tool curl
 
   # Upstream FlClash is the only retained upstream project source address.
-  sync_github_release "chen08209/FlClash" "__latest__" "__same__" "FlClash upstream mirror"
+  if [[ "${SYNC_UPSTREAM_FLCLASH:-1}" == "1" ]]; then
+    sync_github_release "chen08209/FlClash" "__latest__" "__same__" "FlClash upstream mirror"
+  fi
 
-  sync_github_release "MetaCubeX/meta-rules-dat" "latest" "third-party-meta-rules-dat-latest" "Third-party mirror"
-  sync_github_release "AppImage/AppImageKit" "continuous" "third-party-appimagekit-continuous" "Third-party mirror"
+  if [[ "${SYNC_META_RULES_DAT:-1}" == "1" ]]; then
+    sync_github_release "MetaCubeX/meta-rules-dat" "latest" "third-party-meta-rules-dat-latest" "Third-party mirror"
+  fi
+  if [[ "${SYNC_APPIMAGEKIT:-1}" == "1" ]]; then
+    sync_github_release "AppImage/AppImageKit" "continuous" "third-party-appimagekit-continuous" "Third-party mirror"
+  fi
   local mihomo_patterns=(
     "version.txt"
     "checksums.txt"
@@ -137,20 +145,26 @@ main() {
     "mihomo-linux-arm64-*.gz"
     "mihomo-windows-amd64-v[123]-*.zip"
   )
-  sync_github_release "MetaCubeX/mihomo" "__latest__" "third-party-mihomo-latest" "Third-party mirror" "${mihomo_patterns[@]}"
-  sync_github_release "MetaCubeX/mihomo" "Prerelease-Alpha" "third-party-mihomo-prerelease-alpha" "Third-party mirror" "${mihomo_patterns[@]}"
+  if [[ "${SYNC_MIHOMO:-1}" == "1" ]]; then
+    sync_github_release "MetaCubeX/mihomo" "__latest__" "third-party-mihomo-latest" "Third-party mirror" "${mihomo_patterns[@]}"
+    sync_github_release "MetaCubeX/mihomo" "Prerelease-Alpha" "third-party-mihomo-prerelease-alpha" "Third-party mirror" "${mihomo_patterns[@]}"
+  fi
 
-  sync_url_asset \
-    "third-party-googletest-release-1.11.0" \
-    "Third-party mirror: googletest release-1.11.0" \
-    "https://github.com/google/googletest/archive/release-1.11.0.zip" \
-    "googletest-release-1.11.0.zip"
+  if [[ "${SYNC_GOOGLETEST:-1}" == "1" ]]; then
+    sync_url_asset \
+      "third-party-googletest-release-1.11.0" \
+      "Third-party mirror: googletest release-1.11.0" \
+      "https://github.com/google/googletest/archive/release-1.11.0.zip" \
+      "googletest-release-1.11.0.zip"
+  fi
 
-  sync_url_asset \
-    "third-party-metacubexd-gh-pages" \
-    "Third-party mirror: metacubexd gh-pages" \
-    "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip" \
-    "metacubexd-gh-pages.zip"
+  if [[ "${SYNC_METACUBEXD:-1}" == "1" ]]; then
+    sync_url_asset \
+      "third-party-metacubexd-gh-pages" \
+      "Third-party mirror: metacubexd gh-pages" \
+      "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip" \
+      "metacubexd-gh-pages.zip"
+  fi
 }
 
 main "$@"
