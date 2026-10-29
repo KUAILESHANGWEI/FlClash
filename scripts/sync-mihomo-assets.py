@@ -86,7 +86,7 @@ def sync(selector, target_tag):
         for a in obsolete:
             if len(target_assets) + needed <= 1000:
                 break
-            gh('release', 'delete-asset', target_tag, a['name'], '-R', TARGET, '--yes')
+            gh('api', '--method', 'DELETE', f"repos/{TARGET}/releases/assets/{a['id']}")
             target_assets.remove(a)
         if len(target_assets) + needed > 1000:
             raise RuntimeError('Insufficient space without deleting protected or unknown assets')
@@ -117,7 +117,7 @@ def sync(selector, target_tag):
         for a in assets(TARGET, target['databaseId']):
             v = version_of(a['name'])
             if v and v not in keep:
-                gh('release', 'delete-asset', target_tag, a['name'], '-R', TARGET, '--yes')
+                gh('api', '--method', 'DELETE', f"repos/{TARGET}/releases/assets/{a['id']}")
         print(f'Synchronized {target_tag}: {new_version}', flush=True)
 
 
