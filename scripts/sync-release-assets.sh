@@ -133,21 +133,8 @@ main() {
   if [[ "${SYNC_APPIMAGEKIT:-1}" == "1" ]]; then
     sync_github_release "AppImage/AppImageKit" "continuous" "third-party-appimagekit-continuous" "Third-party mirror"
   fi
-  local mihomo_patterns=(
-    "version.txt"
-    "checksums.txt"
-    "mihomo-android-amd64-*.gz"
-    "mihomo-android-arm64-v8-*.gz"
-    "mihomo-android-armv7-*.gz"
-    "mihomo-darwin-amd64-v[123]-*.gz"
-    "mihomo-darwin-arm64-*.gz"
-    "mihomo-linux-amd64-v[123]-*.gz"
-    "mihomo-linux-arm64-*.gz"
-    "mihomo-windows-amd64-v[123]-*.zip"
-  )
   if [[ "${SYNC_MIHOMO:-1}" == "1" ]]; then
-    sync_github_release "MetaCubeX/mihomo" "__latest__" "third-party-mihomo-latest" "Third-party mirror" "${mihomo_patterns[@]}"
-    sync_github_release "MetaCubeX/mihomo" "Prerelease-Alpha" "third-party-mihomo-prerelease-alpha" "Third-party mirror" "${mihomo_patterns[@]}"
+    python3 scripts/sync-mihomo-assets.py
   fi
 
   if [[ "${SYNC_GOOGLETEST:-1}" == "1" ]]; then

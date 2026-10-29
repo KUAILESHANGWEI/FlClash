@@ -5,6 +5,10 @@ on:
   schedule:
     - cron: '37 */6 * * *'
 
+concurrency:
+  group: release-asset-sync
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
